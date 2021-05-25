@@ -18,7 +18,7 @@ const Header = (props) => {
       <div class="container d-flex align-items-center">
 
         <div class="logo mr-auto">
-          <h1><span><img src={logo} alt="" /></span></h1>
+          <h1><span><img style={{"height" : "44px"}} src={logo} alt="" /></span></h1>
         </div>
 
         <div class="user">
