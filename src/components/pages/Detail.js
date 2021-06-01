@@ -1,77 +1,58 @@
-import React, { useEffect, useState } from "react";
-import { getProductById, getUserConfig } from "../../actions/product";
-import {connect} from 'react-redux';
-import Shimmer from "../widgets/shimmerEffect"
+import React, { useState, useEffect } from 'react'
+import { getProductById, getUserConfig } from '../../actions/product'
+import { useDispatch, useSelector } from 'react-redux'
+import Shimmer from '../widgets/shimmerEffect'
+import '../../scss/detail.scss'
+import { ReactComponent as FacebookIcon } from '../../static/image/facebook.svg'
+import { ReactComponent as TwitterIcon } from '../../static/image/twitter.svg'
+import { ReactComponent as PinterestIcon } from '../../static/image/pinterest.svg'
+
 const Detail = (props) => {
-    const [productId , setProductName] = useState(props.match.params.productId);
-    const [userName , setUserName] = useState(props.match.params.userName);
-    const [productDetail , setProductDetail] = useState({});
-    
+
+    const dispatch = useDispatch()
+    const [productId] = useState(props.match.params.productId);
+    const [userName] = useState(props.match.params.userName);
+    const product_detail_loading = useSelector((state) => state.product.product_detail_loading)
+    const productDetail = useSelector((state) => state.product.productDetail)
+
     useEffect(() => {
-        props.getUserConfig(userName);  
-        props.getProductById(productId);
-    }, [productId]);
-
-    useEffect(()=>{
-        // setBanner(props.bannerUrl)
-    },[props.bannerUrl])
-
-    useEffect(() =>{
-        setProductDetail(props.productDetail)
-    }, [props.productDetail]);
+      dispatch(getUserConfig(userName))
+      dispatch(getProductById(productId))
+    }, [dispatch, productId, userName])
     
-    console.log(props, productDetail);
-    if(props.product_detail_loading){
+    if(product_detail_loading){
         return <Shimmer />
     }
+
     return(
 
-        productDetail ? <section class="single-product" style={{"margin-top" : "110px"}}>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="prod-img">
-                <img class="img-fluid" src={productDetail.imgUrl} alt="" />
-              </div>
-            </div>
+      productDetail ? 
+      <div className="detail-main">
+        <div className="avatar">
+          <img src={productDetail.imgUrl} alt="" />
+        </div>
     
-            <div class="col-md-6">
-              <div class="prod-wrapper">
-                <div class="prod-details">
-                  <div class="prod-name-details">
-                    {productDetail.productName && <h5>{productDetail.productName}</h5>}
-                    {productDetail.brandName && <h6>{productDetail.brandName}</h6>}
-                  </div>
-                  {productDetail.price && <div class="prod-price">
-                    <h5>${productDetail.price}</h5>
-                  </div>}
-                </div>
-              </div>
-              {productDetail.productDescription && <div class="prod-text" dangerouslySetInnerHTML={{ __html: productDetail.productDescription ? productDetail.productDescription.replaceAll('&lt;' , '<') : "product description" }}>
-              </div>}
-    
-              {productDetail.url && <div class="prod-btns">
-                <a class="buy-now" href={productDetail.url} target="_blank">Buy now</a>
-              </div>}
-            </div>
+        <div className="detail">
+          <p className="title">{productDetail.productName && productDetail.productName}</p>
+          <p className="price">${productDetail.price}</p>
+          <p className="author">{productDetail.brandName && productDetail.brandName}</p>
+          <div className="buy_now">
+            <button><a href={productDetail.url}>Buy Now</a></button>
+          </div>
+          {productDetail.productDescription && <div dangerouslySetInnerHTML={{ __html: productDetail.productDescription ? productDetail.productDescription.replaceAll('&lt;' , '<') : 'product description' }} className="description">
+          </div>}
+          <div className="share">
+            <span>Share</span>
+            <ul>
+              <li><FacebookIcon /></li>
+              <li><TwitterIcon/></li>
+              <li><PinterestIcon/></li>
+            </ul>
           </div>
         </div>
-      </section>
-       : <div></div>
+      </div>
+      : <div></div>
     )
 }
 
-const mapStateToProps = ( state ) => ( {
-    product_detail_loading : state.product.product_detail_loading,
-    productDetail: state.product.productDetail,
-    // bannerUrl: state.product.bannerUrl,
-    theme: state.product.theme,
-    buttonColor: state.product.buttonColor,
-} );
-
-const mapDispatchToProps = {
-    getProductById,
-    getUserConfig
-};
-
-export default connect( mapStateToProps, mapDispatchToProps )( Detail );
+export default Detail

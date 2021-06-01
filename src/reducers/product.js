@@ -4,10 +4,12 @@ const initialState = {
     product_detail_loading : false,
   };
   
-  export default function(state = initialState, action) {
+  export default function ProductReducer(state = initialState, action) {
     const { type , data } = action;
     console.log(data);
     switch ( type ) {
+        case 'SET_ALERT':
+          return {...state, productDetail : data , product_detail_loading : false}
         case 'PRODUCT_DETAIL_LOADING' : 
             return {...state , product_detail_loading : data};
         case 'PRODUCT_LISTING':

@@ -3,7 +3,7 @@ const initialState = {
     users: [],
   };
   
-  export default function(state = initialState, action) {
+  export default function HomeReducer(state = initialState, action) {
     const { type , data } = action;
     switch ( type ) {
       case 'UPDATE_USER':
