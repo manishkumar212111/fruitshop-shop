@@ -39,10 +39,8 @@ const Detail = (props) => {
           <div className="buy_now">
             <button><a href={productDetail.url}>Buy Now</a></button>
           </div>
-          <p className="description">
-              {productDetail.productDescription && <div dangerouslySetInnerHTML={{ __html: productDetail.productDescription ? productDetail.productDescription.replaceAll('&lt;' , '<') : 'product description' }}>
-              </div>}
-          </p>
+          {productDetail.productDescription && <div dangerouslySetInnerHTML={{ __html: productDetail.productDescription ? productDetail.productDescription.replaceAll('&lt;' , '<') : 'product description' }} className="description">
+          </div>}
           <div className="share">
             <span>Share</span>
             <ul>
