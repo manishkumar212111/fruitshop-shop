@@ -1,8 +1,8 @@
-import Home from "./components/pages/Home";
-import Detail from "./components/pages/Detail";
+import Home from "./components/pages/Home"
+import Detail from "./components/pages/Detail"
 
 
-export default [
+const Route = [
     {
         path: "/:userName",
         component: Home,
@@ -14,3 +14,5 @@ export default [
         exact: true,
     },    
 ];
+
+export default Route

@@ -5,7 +5,7 @@ const initialState = {
     expires : true
   };
   
-  export default function(state = initialState, action) {
+  export default function UserReducer(state = initialState, action) {
     const { type , data } = action;
     console.log(data);
     switch ( type ) {

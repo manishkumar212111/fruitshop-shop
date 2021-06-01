@@ -1,11 +1,8 @@
-
-import LOGIN_USER from "../actions/types"
-
 const initialState = {
     userDetail: [],
   };
   
-export default function(state = initialState, action) {
+export default function AuthReducer(state = initialState, action) {
   const { type , data } = action;
   console.log(type , data)
   switch ( type ) {

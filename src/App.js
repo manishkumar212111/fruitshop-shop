@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./store";
-import { loadUser } from "./actions/auth";
-import "./App.scss";
-import Layout from "./components/Layout";
+import React from "react"
+import { BrowserRouter as Router } from "react-router-dom"
+import { Provider } from "react-redux"
+import store from "./store"
+import "./App.scss"
+import Layout from "./components/Layout"
 
 
 const App = () => {
@@ -17,4 +16,5 @@ const App = () => {
     </Provider>
   );
 };
+
 export default App;
