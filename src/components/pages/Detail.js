@@ -14,15 +14,12 @@ const Detail = (props) => {
     const [userName] = useState(props.match.params.userName);
     const product_detail_loading = useSelector((state) => state.product.product_detail_loading)
     const productDetail = useSelector((state) => state.product.productDetail)
-
+console.log("productDetail",productDetail)
     useEffect(() => {
       dispatch(getUserConfig(userName))
       dispatch(getProductById(productId))
     }, [dispatch, productId, userName])
     
-    if(product_detail_loading){
-        return <Shimmer />
-    }
 
     return(
 
@@ -36,6 +33,7 @@ const Detail = (props) => {
           <p className="title">{productDetail.productName && productDetail.productName}</p>
           <p className="price">${productDetail.price}</p>
           <p className="author">{productDetail.brandName && productDetail.brandName}</p>
+          <p className="author">{productDetail.promoCode && productDetail.promoCode}</p>
           <div className="buy_now">
             <button><a href={productDetail.url}>Buy Now</a></button>
           </div>
