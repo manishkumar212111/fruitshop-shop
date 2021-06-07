@@ -35,7 +35,7 @@ console.log("productDetail",productDetail)
           <p className="author">{productDetail.brandName && productDetail.brandName}</p>
           <p className="author">{productDetail.promoCode && productDetail.promoCode}</p>
           <div className="buy_now">
-            <button><a href={productDetail.url}>Buy Now</a></button>
+            <a href={productDetail.url}><button>Buy Now</button></a>
           </div>
           {productDetail.productDescription && <div dangerouslySetInnerHTML={{ __html: productDetail.productDescription ? productDetail.productDescription.replaceAll('&lt;' , '<') : 'product description' }} className="description">
           </div>}
