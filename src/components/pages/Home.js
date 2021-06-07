@@ -9,6 +9,7 @@ const Home = (props) => {
 
     const dispatch = useDispatch()
     const history = useHistory()
+    console.log("dddddddddddd", props.match.params.userName)
     const userName = props.match.params.userName
     const product_detail_loading = useSelector((state) => state.product.product_detail_loading)
     const productList = useSelector((state) => state.product.productList)
@@ -21,9 +22,6 @@ const Home = (props) => {
 
     const goToDetailPage = (url) => {
         history.push(url);
-    }
-    if(product_detail_loading){
-        return <Shimmer />
     }
     return(
         <>
