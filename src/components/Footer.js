@@ -20,9 +20,9 @@ const Footer = () => {
     <div className='help'>
       <div className='title'>Help</div>
       <ul>
-        <li>Customer Support</li>
-        <li>Join Superfruit</li>
-        <li>Get your product featured</li>
+        <li><a href="https://superfruit.formstack.com/forms/support">Customer Support</a></li>
+        <li><a href="superfruit.app">Join Superfruit</a></li>
+        <li><a href="https://superfruit.formstack.com/forms/business">Get your product featured</a></li>
       </ul>
     </div>
   
