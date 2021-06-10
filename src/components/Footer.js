@@ -21,7 +21,7 @@ const Footer = () => {
       <div className='title'>Help</div>
       <ul>
         <li><a href="https://superfruit.formstack.com/forms/support">Customer Support</a></li>
-        <li><a href="superfruit.app">Join Superfruit</a></li>
+        <li><a href="https://superfruit.app">Join Superfruit</a></li>
         <li><a href="https://superfruit.formstack.com/forms/business">Get your product featured</a></li>
       </ul>
     </div>
