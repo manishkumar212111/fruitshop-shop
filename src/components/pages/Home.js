@@ -23,7 +23,6 @@ const Home = (props) => {
     const goToDetailPage = (url) => {
         history.push(url);
     }
-    console.log(categories)
     return(
         <>
         <div className='menu'>
@@ -53,4 +52,4 @@ const Home = (props) => {
     )
 }
 
-export default Homegit 
+export default Home; 
