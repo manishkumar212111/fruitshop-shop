@@ -2,13 +2,11 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { connect } from "react-redux";
-  
-import Header from "./header";
+import Header from "./Header";
 import routes from "../routes";
 import Footer from "./Footer";
-import { Container } from 'react-bootstrap'
+// import { Container } from 'react-bootstrap'
 
 
 class Layout extends React.Component {
@@ -46,6 +44,7 @@ class Layout extends React.Component {
             return toast.warn(message, configs);
           case "danger":
             return toast.error(message, configs);
+          default:
         }
       }
 
@@ -55,6 +54,7 @@ class Layout extends React.Component {
         alerts.length > 0 &&
         alerts.map((alert, idx) => {
           this.createNotification(`${alert.alertType}`, alert.msg);
+          return '';
         });
     }
 
@@ -70,9 +70,7 @@ class Layout extends React.Component {
     }
 
     render() {
-        console.log(this.props , "sdbhbjh");
 
-        
         return (
             <div>
                 <ToastContainer 
@@ -87,15 +85,17 @@ class Layout extends React.Component {
                     pauseOnHover
                 />
                 {/* <h1>{ this.state.title }</h1> */}
-                <Container>
+                {/* <Container> */}
+                <>
                   <Header />
                   <div id="main" className={'inner-page'} onScroll={(e) => this.handleScroll(e)}>
                     <Switch>
-                        { routes.map( route => <Route key={ route.path } { ...route } /> ) }
+                      { routes.map( route => <Route key={ route.path } { ...route } /> ) }
                     </Switch>
                   </div>
                   <Footer />
-                </Container>
+                </>
+                {/* </Container> */}
             </div>
         );
     }

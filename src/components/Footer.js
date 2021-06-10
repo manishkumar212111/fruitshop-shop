@@ -1,15 +1,50 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React from 'react'
+import '../scss/footer.scss'
+import { ReactComponent as AmericanExpressIcon } from '../static/image/american-express.svg'
+import { ReactComponent as ApplePayIcon } from '../static/image/apple-pay.svg'
+import { ReactComponent as DinersClubIcon } from '../static/image/diners-club.svg'
+import { ReactComponent as DiscoverIcon } from '../static/image/discover.svg'
+import { ReactComponent as EloIcon } from '../static/image/elo.svg'
+import { ReactComponent as GooglePayIcon } from '../static/image/google-pay.svg'
+import { ReactComponent as JCBIcon } from '../static/image/jcb.svg'
+import { ReactComponent as MastercardIcon } from '../static/image/mastercard.svg'
+import { ReactComponent as PaypalIcon } from '../static/image/paypal.svg'
+import { ReactComponent as ShopPayIcon } from '../static/image/shop-pay.svg'
+import { ReactComponent as VenmoIcon } from '../static/image/venmo.svg'
+import { ReactComponent as VisaIcon } from '../static/image/visa.svg'
 
-const Footer = ( { loggedIn } ) => (
-    <div>
-        This is footer
+const Footer = () => {
+
+  return (
+    <>
+    <div className='help'>
+      <div className='title'>Help</div>
+      <ul>
+        <li><a href="https://superfruit.formstack.com/forms/support">Customer Support</a></li>
+        <li><a href="superfruit.app">Join Superfruit</a></li>
+        <li><a href="https://superfruit.formstack.com/forms/business">Get your product featured</a></li>
+      </ul>
     </div>
-);
+  
+    <div className='footer'>
+        <p>&copy; Superfruit</p>
+        <div>
+            <AmericanExpressIcon/>
+            <ApplePayIcon/>
+            <DinersClubIcon/>
+            <DiscoverIcon/>
+            <EloIcon/>
+            <GooglePayIcon/>
+            <JCBIcon/>
+            <MastercardIcon/>
+            <PaypalIcon/>
+            <ShopPayIcon/>
+            <VenmoIcon/>
+            <VisaIcon/>
+        </div>
+      </div>
+    </> 
+  );
+}
 
-const mapStateToProps = ( state ) => ( {
-    loggedIn: state.loggedIn,
-} );
-
-export default connect( mapStateToProps )( Footer );
+export default Footer;
