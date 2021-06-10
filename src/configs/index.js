@@ -1,11 +1,10 @@
 const categories = [
-    {img: "https://media-private.canva.com/MADas8ggWsE/1/screen_3x.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20210508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210508T025549Z&X-Amz-Expires=25100&X-Amz-Signature=0f6df826a8003b3f1104061affbe36e0f76dc4daee0db08f32ea1fe8a74c0aa8&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2008%20May%202021%2009%3A54%3A09%20GMT" , id: "fashion" , status : false},
-    {img: "https://media-private.canva.com/MADas8ggWsE/1/screen_3x.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20210508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210508T025549Z&X-Amz-Expires=25100&X-Amz-Signature=0f6df826a8003b3f1104061affbe36e0f76dc4daee0db08f32ea1fe8a74c0aa8&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2008%20May%202021%2009%3A54%3A09%20GMT" , id: "dress"  , status : false},
-    {img: "https://media-private.canva.com/MADas8ggWsE/1/screen_3x.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20210508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210508T025549Z&X-Amz-Expires=25100&X-Amz-Signature=0f6df826a8003b3f1104061affbe36e0f76dc4daee0db08f32ea1fe8a74c0aa8&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2008%20May%202021%2009%3A54%3A09%20GMT" , id: "decor" , status : false},
-    {img: "https://media-private.canva.com/MADas8ggWsE/1/screen_3x.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20210508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210508T025549Z&X-Amz-Expires=25100&X-Amz-Signature=0f6df826a8003b3f1104061affbe36e0f76dc4daee0db08f32ea1fe8a74c0aa8&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2008%20May%202021%2009%3A54%3A09%20GMT" , id: "makeup" , status : false},
-    {img: "https://media-private.canva.com/MADas8ggWsE/1/screen_3x.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20210508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210508T025549Z&X-Amz-Expires=25100&X-Amz-Signature=0f6df826a8003b3f1104061affbe36e0f76dc4daee0db08f32ea1fe8a74c0aa8&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2008%20May%202021%2009%3A54%3A09%20GMT" , id: "ktichen" , status : false},
-    {img: "https://media-private.canva.com/MADas8ggWsE/1/screen_3x.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJWF6QO3UH4PAAJ6Q%2F20210508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210508T025549Z&X-Amz-Expires=25100&X-Amz-Signature=0f6df826a8003b3f1104061affbe36e0f76dc4daee0db08f32ea1fe8a74c0aa8&X-Amz-SignedHeaders=host&response-expires=Sat%2C%2008%20May%202021%2009%3A54%3A09%20GMT" , id: "class" , status : false},
-  ]
+  {text : "Beauty" , id: "beauty" , status : false},
+  {text : "Food & Drink" , id: "food&drink"  , status : false},
+  {text : "Health & Wellness" , id: "health&wellness" , status : false},
+  {text : "Home & Living" , id: "home&living" , status : false},
+  {text : "Fashion" , id: "fashion" , status : false},
+]
 
 const colors = ['#1DA1F2' , '#7CFC00' , '#FF00FF' , '#FF1616' , '#FF7F00' , '#FFDE59' , '#000000' , '#545454' , '#737373' , '#8C52FF' , '#CB6CE6' , '#FF66C4']
 module.exports ={

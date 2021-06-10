@@ -349,7 +349,7 @@ body {
   .sort-cate ul li {
     margin-right: 15px;
   }
-  .sort-cate ul li a {
+  .sort-cate ul li span {
     background-color: #FF0000;
     color: #ffffff;
     font-weight: 700;

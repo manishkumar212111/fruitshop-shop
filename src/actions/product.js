@@ -1,13 +1,14 @@
 import { setAlert } from "./alert";
 import API from "../API";
 
-export const getProductByUserId = (userName) => dispatch =>{
+export const getProductByUserId = (userName , options = {}) => dispatch =>{
   try{
-      dispatch({
-          type : "PRODUCT_DETAIL_LOADING",
-          data : true
-      })
-    API.get('ProductList' , {}, userName , function(res){
+      
+    dispatch({
+      type : "PRODUCT_LIST_LOADING",
+      data : true
+    })
+    API.get('ProductList' , options, userName , function(res){
       
       if(res && res.data){
           dispatch( { type: "PRODUCT_LISTING",
@@ -55,7 +56,10 @@ export const getProductById = (productId) => dispatch =>{
 
 export const getUserConfig = (userName) => dispatch =>{
   try{
-
+    dispatch({
+        type : "PRODUCT_DETAIL_LOADING",
+        data : true
+    })
     API.get('UserConfig' , {userName : userName}, '' , function(res){
       
       if(res && res.data){
